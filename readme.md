@@ -2,7 +2,7 @@
 
 Deploy Hasura on a Droplet using bash script: run `./generate-env.sh` and it will generate a `setup.env`.
 Ensure that your ip address is filled in correctly because it is used as an ip filter in the Caddyfile.
-Make sure to read the source of `setup.sh` to see if it does what you want, also see links to documentation.
+Read the source of `setup.sh` to see if it does what you want.
 
 ```bash
 $ ./generate-env.sh
@@ -20,16 +20,17 @@ $ export DROPLET_IP=0.0.0.0
 $ cat setup.env setup.sh | ssh -T root@$DROPLET_IP
 ```
 
-This will install Caddy v2, PostgreSQL 12, Docker and Hasura onto your VPS.
+This will install Caddy v2, PostgreSQL 12, Docker and Hasura.
 
 ## Assets
 
-You can copy your website assets into `/var/www/html` using rsync.
-File deletions can also be synced by adding the `--delete` argument:
+You can copy your website assets into `/var/www/html` using `rsync`.
 
 ```bash
 $ rsync -avz ./public/ hasura@$DROPLET_IP:/var/www/html/
 ```
+
+File deletions can also be synced by adding the `--delete` argument:
 
 ## Domain
 
@@ -47,16 +48,19 @@ Use at own risk.
 
 ## Links
 
-- [Install PostgreSQL](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-20-04)
-- [Install Caddy v2](https://caddyserver.com/docs/download#debian-ubuntu-raspbian)
-- [Install Docker](https://docs.docker.com/engine/install/ubuntu/)
-- [Install Hasura](https://hasura.io/docs/1.0/graphql/manual/deployment/docker/index.html#deployment-docker)
+- Install
+    - [Install PostgreSQL](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-20-04)
+    - [Install Caddy v2](https://caddyserver.com/docs/download#debian-ubuntu-raspbian)
+    - [Install Docker](https://docs.docker.com/engine/install/ubuntu/)
+    - [Install Hasura](https://hasura.io/docs/1.0/graphql/manual/deployment/docker/index.html#deployment-docker)
 
-- [Hasura Docs](https://hasura.io/docs/)
-- [PostgreSQL Docs](https://www.postgresql.org/docs/current/index.html)
-- [Caddy Docs](https://caddyserver.com/docs/)
-- [Ubuntu Docs](https://ubuntu.com/server/docs)
-- [Docker Docs](https://docs.docker.com/)
+- Documentation
+    - [Hasura Docs](https://hasura.io/docs/)
+    - [PostgreSQL Docs](https://www.postgresql.org/docs/current/index.html)
+    - [Caddy Docs](https://caddyserver.com/docs/)
+    - [Ubuntu Docs](https://ubuntu.com/server/docs)
+    - [Docker Docs](https://docs.docker.com/)
 
-- [Digitial Ocean Tutorials](https://www.digitalocean.com/community/tutorials).
-- [Hasura Tutorials](https://hasura.io/docs/1.0/graphql/manual/guides/index.html).
+- Tutorials
+    - [Digitial Ocean Tutorials](https://www.digitalocean.com/community/tutorials)
+    - [Hasura Tutorials](https://hasura.io/docs/1.0/graphql/manual/guides/index.html)
